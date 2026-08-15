@@ -45,7 +45,7 @@ module tb_sequence_detector();
       $display("=========== Your Design Passed ===========");
     end
     else begin
-      $display("=========== Test completed with %d /100 failures ===========", error);
+      $display("=========== Test completed with %d /3 failures ===========", error);
     end           
         $finish;
     end

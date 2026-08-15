@@ -1,14 +1,23 @@
 ```
 
-  _____    _______   _        _        __  __    __      __  ___         ___  
- |  __ \  |__   __| | |      | |      |  \/  |   \ \    / / |__ \       / _ \ 
- | |__) |    | |    | |      | |      | \  / |    \ \  / /     ) |     | | | |
- |  _  /     | |    | |      | |      | |\/| |     \ \/ /     / /      | | | |
- | | \ \     | |    | |____  | |____  | |  | |      \  /     / /_   _  | |_| |
- |_|  \_\    |_|    |______| |______| |_|  |_|       \/     |____| (_)  \___/ 
-                                                                              
-                                                                                                                       
+  _____    _______   _        _        __  __      __      __  ___        __ 
+ |  __ \  |__   __| | |      | |      |  \/  |     \ \    / / |__ \      /_ |
+ | |__) |    | |    | |      | |      | \  / |      \ \  / /     ) |      | |
+ |  _  /     | |    | |      | |      | |\/| |       \ \/ /     / /       | |
+ | | \ \     | |    | |____  | |____  | |  | |        \  /     / /_   _   | |
+ |_|  \_\    |_|    |______| |______| |_|  |_|         \/     |____| (_)  |_|
+                                                                             
+                                                                                                                                                    
+                                                                                                                                                                                                 
 ```
+***
+***Version 2.1***
+
+We have released RTLLM v2.1 already. We sincerely thank users for pointing out issues encountered when using RTLLM, and apologize for the confusion caused.
+1. Corrected several design descriptions and testbenches.
+2. Updated the affected designs for consistency.
+
+--15 Aug. 2026
 ***
 ***Version 2.0***
 
@@ -62,7 +71,7 @@ RTL Generation with Large Language Model Benchmark for generating design RTL wit
 Please refer to the respective folders for each design to access the files mentioned above.
 
 ## 2. Run Makefile [^2]
-[^2]: We have recently provided an automated Python script (auto_run.py) that you can use as a one-click compilation for all designs after simple modification.
+[^2]: We have recently provided an automated Python script (auto_run.py) that you can use as a one-click compilation for all designs after simple modification. Before running it, replace the generated Verilog path in auto_run.py with your own path that contains t1, t2, ... folders.
 
 You can run makefile to test the functionality of the code.
 

@@ -6,6 +6,22 @@ module tb();
  
 	always #5 clk = ~clk;
   integer error = 0;
+  integer wait_count = 0;
+
+  task wait_dout_valid;
+  begin
+    wait_count = 0;
+    while(dout_valid == 0 && wait_count < 20) begin
+      #5;
+      wait_count = wait_count + 1;
+    end
+    if (dout_valid == 0) begin
+      error = error + 1;
+      $display("Timeout waiting for dout_valid");
+    end
+  end
+  endtask
+
 	initial begin
 		clk  <= 1'b0;
 		rst_n <= 1'b0;
@@ -22,9 +38,7 @@ module tb();
     din_serial <= 1'b0; #10;
     din_serial <= 1'b0; #10;
     din_serial <= 1'b0; #10;
-    while(dout_valid == 0) begin
-      #5;
-    end
+    wait_dout_valid;
     // $display("%b",dout_parallel);
     error = (dout_parallel == 8'b11110000) ?error:error+1;
     
@@ -42,9 +56,7 @@ module tb();
 		din_serial <= 1'b1; #10
 		din_serial <= 1'b1; #20
 		din_valid  <= 1'b0;
-    while(dout_valid == 0) begin
-      #5;
-    end
+    wait_dout_valid;
     // $display("%b",dout_parallel);
     error = (dout_parallel == 8'b11000011) ?error:error+1;
 		#10
@@ -55,7 +67,7 @@ module tb();
         $display("===========Your Design Passed===========");
     end
     else begin
-    $display("===========Error===========");
+    $display("=========== Test completed with %0d failures ===========", error);
     end
 		$finish;
 	end 

@@ -1,6 +1,6 @@
 Please act as a professional verilog designer.
 
-Implement a Triangle Wave signal generator module that generates a waveform by incrementing and decrementing a 5-bit signal named "wave". The waveform cycles between 0 and 31, which is incremented or decremented by 1.
+Implement a Triangle Wave signal generator module that generates a waveform by incrementing and decrementing a 5-bit signal named "wave". The waveform cycles between 0 and 31, which is incremented or decremented by 1. The waveform holds one extra clock cycle at both 0 and 31 before changing direction.
 
 
 Module name:  
@@ -21,9 +21,9 @@ The state and waveform registers are updated in the always block, triggered on t
 On reset, indicated by ~rst_n, the state register is cleared to 0, and the wave register is cleared to 0.
 The waveform generation is controlled using a case statement based on the current state:
 If the state is 0, the waveform (wave) is incremented by 1.
-If the waveform reaches 31 (wave == 31), the state is transitioned to 1.
+If the waveform reaches 31 (wave == 31), the state is transitioned to 1 and the waveform keeps 31 in that clock cycle.
 If the state is 1, the waveform is decremented by 1.
-If the waveform reaches 0 (wave == 0), the state is transitioned back to 0.
+If the waveform reaches 0 (wave == 0), the state is transitioned back to 0 and the waveform keeps 0 in that clock cycle.
 The waveform generation continues to cycle between 0 and 31 based on the state transitions.
 
 Give me the complete code.

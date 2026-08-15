@@ -18,6 +18,8 @@ initial
         #10 error = (out==64)?error : error+1;
         #10 in=8'd255; ctrl= 3'd7; //shift by 7bit
         #10 error = (out==1)?error : error+1;
+        #10 in=8'b00000001; ctrl= 3'd1; //logical right shift, no rotation
+        #10 error = (out==0)?error : error+1;
     // end
     // initial begin
     //     $monitor("Input=%d, Control=%d, Output=%d",in,ctrl,out);

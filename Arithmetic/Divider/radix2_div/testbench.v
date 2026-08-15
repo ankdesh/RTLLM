@@ -81,7 +81,7 @@ module radix2_div_tb;
         if (error == 0) begin
             $display("===========Your Design Passed===========");
         end else begin
-            $display("===========Failed===========", error);
+            $display("=========== Test completed with %0d/8 failures ===========", error);
         end
 
         $finish;

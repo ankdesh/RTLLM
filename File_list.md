@@ -13,8 +13,8 @@ Verilog Code Classification
         - **multi_8bit**
         - multi_16bit
         - multi_booth_8bit
-        - multi_pipie_4bit
-        - multi_pipie_8bit
+        - multi_pipe_4bit
+        - multi_pipe_8bit
     - Divider
         - div_16bit
         - radix2_div

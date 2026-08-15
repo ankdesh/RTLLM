@@ -13,10 +13,12 @@ Output ports:
     clk_div: Fractionally divided clock output.
 
 Implementation:
-The module performs fractional frequency division by counting clock cycles and generating an intermediate divided clock signal. For 3.5x division:
-The counter cycles through 7 clock cycles (MUL2_DIV_CLK = 7).
-It generates two uneven clock periods: one with 4 source clock cycles and another with 3 source clock cycles.
-In the next cycle, phase-shifted versions of the divided clock are generated. One phase is delayed by half a clock period, and the other is advanced by half a clock period.
-Finally, the two intermediate clocks are logically OR-ed to produce the final fractional divided clock output, ensuring the divided clock signal has a uniform period.
+The module performs fractional frequency division by counting clock cycles and generating intermediate divided clock signals. For 3.5x division:
+The counter cycles through 7 half clock steps (MUL2_DIV_CLK = 7).
+It generates one divided clock pulse on the positive edge of clk, and another adjusted pulse on the negative edge of clk.
+The negative-edge pulse extends the output by half a source clock cycle, so the final output has the required 3.5x division period.
+In each divided clock period, clk_div keeps high for the first 3 half clock steps and keeps low for the next 4 half clock steps.
+Finally, the two intermediate clocks are logically OR-ed to produce the final fractional divided clock output.
+The active low reset signal rst_n asynchronously initializes the counter and the intermediate clock signals to 0.
 
 Give me the complete code.
