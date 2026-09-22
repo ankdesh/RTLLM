@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Testing & Typing
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# EDA & Simulation artifacts
+*.vvp
+*.vcd
+*.log
+obj_dir/
+
+# Benchmark run artifacts
+runs/

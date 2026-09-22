@@ -1,0 +1,1186 @@
+{
+  "simulator": "verilator",
+  "total_designs": 50,
+  "total_trials": 1,
+  "syntax_success_designs": 28,
+  "func_success_designs": 0,
+  "overall_syntax_pass_rate": 0.56,
+  "overall_func_pass_rate": 0.0,
+  "pass_at_k": {
+    "pass@1": 0.0
+  },
+  "category_breakdown": {
+    "Arithmetic": {
+      "total_designs": 19.0,
+      "syntax_pass_rate": 0.5263157894736842,
+      "func_pass_rate": 0.0
+    },
+    "Control": {
+      "total_designs": 6.0,
+      "syntax_pass_rate": 0.5,
+      "func_pass_rate": 0.0
+    },
+    "Memory": {
+      "total_designs": 5.0,
+      "syntax_pass_rate": 0.4,
+      "func_pass_rate": 0.0
+    },
+    "Miscellaneous": {
+      "total_designs": 20.0,
+      "syntax_pass_rate": 0.65,
+      "func_pass_rate": 0.0
+    }
+  },
+  "designs": {
+    "accu": {
+      "design_name": "accu",
+      "category": "Arithmetic",
+      "subcategory": "Accumulator",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "accu",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.009 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.011 s (elab=0.000, cvt=0.003, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.363 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/accu.v:42:10: Missing newline at end of file (POSIX 3.206).\n                                                                          : ... Suggest add newline.\n   42 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/accu.v:25:24: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'data_in' generates 8 bits.\n                                                                           : ... note: In instance 'accu'\n   25 |             sum <= sum + data_in;  \n      |                        ^\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/accu.v:26:29: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'data_in' generates 8 bits.\n                                                                           : ... note: In instance 'accu'\n   26 |             data_out <= sum + data_in;  \n      |                             ^\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/accu.v:32:24: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'data_in' generates 8 bits.\n                                                                           : ... note: In instance 'accu'\n   32 |             sum <= sum + data_in;  \n      |                        ^",
+          "sim_output": "",
+          "elapsed_sec": 0.308
+        }
+      ]
+    },
+    "adder_16bit": {
+      "design_name": "adder_16bit",
+      "category": "Arithmetic",
+      "subcategory": "Adder",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "adder_16bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 4 modules, into 0.030 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.026 s (elab=0.004, cvt=0.018, bld=0.000); cpu 0.011 s on 1 threads; allocated 20.812 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_16bit.v:61:10: Missing newline at end of file (POSIX 3.206).\n                                                                                 : ... Suggest add newline.\n   61 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-DECLFILENAME: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_16bit.v:1:8: Filename 'adder_16bit' does not match MODULE name: 'full_adder_1bit'\n    1 | module full_adder_1bit(\n      |        ^~~~~~~~~~~~~~~\n                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=0.000\n                       ... Use \"/* verilator lint_off DECLFILENAME */\" and lint_on around source to disable this message.\n%Warning-GENUNNAMED: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_16bit.v:23:25: Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)\n                                                                                 : ... Suggest assign a label with 'begin : gen_<label_name>'\n   23 |             if (i == 0) begin\n      |                         ^~~~~\n                     ... For warning description see https://verilator.org/warn/GENUNNAMED?v=0.000\n                     ... Use \"/* verilator lint_off GENUNNAMED */\" and lint_on around source to disable this message.\n%Warning-GENUNNAMED: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_16bit.v:25:22: Unnamed generate block 'genblk1' (IEEE 1800-2023 27.6)\n                                                                                 : ... Suggest assign a label with 'begin : gen_<label_name>'\n   25 |             end else begin\n      |                      ^~~~~",
+          "sim_output": "",
+          "elapsed_sec": 0.2441
+        }
+      ]
+    },
+    "adder_32bit": {
+      "design_name": "adder_32bit",
+      "category": "Arithmetic",
+      "subcategory": "Adder",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "adder_32bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.038 MB sources in 4 modules, into 0.020 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.011 s (elab=0.001, cvt=0.006, bld=0.000); cpu 0.010 s on 1 threads; allocated 20.789 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:64:10: Missing newline at end of file (POSIX 3.206).\n                                                                                 : ... Suggest add newline.\n   64 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-DECLFILENAME: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:2:8: Filename 'adder_32bit' does not match MODULE name: 'cla_4bit'\n    2 | module cla_4bit(\n      |        ^~~~~~~~\n                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=0.000\n                       ... Use \"/* verilator lint_off DECLFILENAME */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:53:18: Bits of signal are not used: 'A'[32,15:1]\n                                                                                   : ... note: In instance 'adder_32bit'\n   53 |     input [32:1] A,\n      |                  ^\n                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=0.000\n                       ... Use \"/* verilator lint_off UNUSEDSIGNAL */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:54:18: Bits of signal are not used: 'B'[32,15:1]\n                                                                                   : ... note: In instance 'adder_32bit'\n   54 |     input [32:1] B,\n      |                  ^\n%Warning-UNDRIVEN: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:55:19: Bits of signal are not driven: 'S'[32,15:1]\n                                                                               : ... note: In instance 'adder_32bit'\n   55 |     output [32:1] S,\n      |                   ^\n                   ... For warning description see https://verilator.org/warn/UNDRIVEN?v=0.000\n                   ... Use \"/* verilator lint_off UNDRIVEN */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:58:10: Signal is not used: 'c16'\n                                                                                   : ... note: In instance 'adder_32bit'\n   58 |     wire c16;  \n      |          ^~~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:16: Signal is not used: 'p0'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:20: Signal is not used: 'g0'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                    ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:24: Signal is not used: 'p1'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                        ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:28: Signal is not used: 'g1'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                            ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:32: Signal is not used: 'p2'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                                ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:36: Signal is not used: 'g2'\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                                    ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:40: Bits of signal are not used: 'p3'[2:0]\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                                        ^~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:38:44: Bits of signal are not used: 'g3'[2:0]\n                                                                                   : ... note: In instance 'adder_32bit.cla_upper'\n   38 |     wire [3:0] p0, g0, p1, g1, p2, g2, p3, g3;  \n      |                                            ^~\n%Warning-SELRANGE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:61:29: Selection index out of range: 78:63 outside 32:0\n                                                                               : ... note: In instance 'adder_32bit'\n   61 |     cla_16bit cla_lower(.a(A[15:0]), .b(B[15:0]), .sum(S[15:0]), .cout(c16));\n      |                             ^\n                   ... For warning description see https://verilator.org/warn/SELRANGE?v=0.000\n                   ... Use \"/* verilator lint_off SELRANGE */\" and lint_on around source to disable this message.\n%Warning-SELRANGE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:61:42: Selection index out of range: 78:63 outside 32:0\n                                                                               : ... note: In instance 'adder_32bit'\n   61 |     cla_16bit cla_lower(.a(A[15:0]), .b(B[15:0]), .sum(S[15:0]), .cout(c16));\n      |                                          ^\n%Warning-SELRANGE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_32bit.v:61:57: Selection index out of range: 78:63 outside 32:0\n                                                                               : ... note: In instance 'adder_32bit'\n   61 |     cla_16bit cla_lower(.a(A[15:0]), .b(B[15:0]), .sum(S[15:0]), .cout(c16));\n      |                                                         ^",
+          "sim_output": "",
+          "elapsed_sec": 0.1593
+        }
+      ]
+    },
+    "adder_8bit": {
+      "design_name": "adder_8bit",
+      "category": "Arithmetic",
+      "subcategory": "Adder",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "adder_8bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 3 modules, into 0.019 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.017 s (elab=0.000, cvt=0.004, bld=0.000); cpu 0.008 s on 1 threads; allocated 20.531 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_8bit.v:35:10: Missing newline at end of file (POSIX 3.206).\n                                                                                : ... Suggest add newline.\n   35 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-DECLFILENAME: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_8bit.v:25:8: Filename 'adder_8bit' does not match MODULE name: 'full_adder'\n   25 | module full_adder (\n      |        ^~~~~~~~~~\n                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=0.000\n                       ... Use \"/* verilator lint_off DECLFILENAME */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2882
+        }
+      ]
+    },
+    "adder_bcd": {
+      "design_name": "adder_bcd",
+      "category": "Arithmetic",
+      "subcategory": "Adder",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "adder_bcd",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: adder_bcd.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "adder_pipe_64bit": {
+      "design_name": "adder_pipe_64bit",
+      "category": "Arithmetic",
+      "subcategory": "Adder",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "adder_pipe_64bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.012 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.387 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/adder_pipe_64bit.v:56:10: Missing newline at end of file (POSIX 3.206).\n                                                                                      : ... Suggest add newline.\n   56 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2804
+        }
+      ]
+    },
+    "comparator_3bit": {
+      "design_name": "comparator_3bit",
+      "category": "Arithmetic",
+      "subcategory": "Comparator",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "comparator_3bit",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: comparator_3bit.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "comparator_4bit": {
+      "design_name": "comparator_4bit",
+      "category": "Arithmetic",
+      "subcategory": "Comparator",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "comparator_4bit",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: comparator_4bit.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "div_16bit": {
+      "design_name": "div_16bit",
+      "category": "Arithmetic",
+      "subcategory": "Divider",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "div_16bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.020 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.007 s (elab=0.000, cvt=0.003, bld=0.000); cpu 0.007 s on 1 threads; allocated 20.582 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/div_16bit.v:50:10: Missing newline at end of file (POSIX 3.206).\n                                                                               : ... Suggest add newline.\n   50 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.3261
+        }
+      ]
+    },
+    "radix2_div": {
+      "design_name": "radix2_div",
+      "category": "Arithmetic",
+      "subcategory": "Divider",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "radix2_div",
+          "trial_name": "lint",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 1,
+          "compile_output": "%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:99:10: Missing newline at end of file (POSIX 3.206).\n                                                                                : ... Suggest add newline.\n   99 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:22:30: Signal is not driven, nor used: 'next_state'\n                                                                                  : ... note: In instance 'radix2_div'\n   22 |     reg [1:0] current_state, next_state;\n      |                              ^~~~~~~~~~\n                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=0.000\n                       ... Use \"/* verilator lint_off UNUSEDSIGNAL */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:23:46: Bits of signal are not used: 'remainder_e'[8]\n                                                                                  : ... note: In instance 'radix2_div'\n   23 |     reg [DATAWIDTH:0] dividend_e, divisor_e, remainder_e;\n      |                                              ^~~~~~~~~~~\n%Error-BLKANDNBLK: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:9:16: Unsupported: Blocking and non-blocking assignments to potentially overlapping bits of same packed variable: 'ready'\n    9 |     output reg ready,\n      |                ^~~~~\n                   /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:87:17: ... Location of blocking assignment (bits [0:0])\n   87 |                 ready = 1'b1;\n      |                 ^~~~~\n                   /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:75:21: ... Location of nonblocking assignment (bits [0:0])\n   75 |                     ready <= 1;\n      |                     ^~~~~\n                   ... For error description see https://verilator.org/warn/BLKANDNBLK?v=0.000\n%Error-BLKANDNBLK: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:12:16: Unsupported: Blocking and non-blocking assignments to potentially overlapping bits of same packed variable: 'vld_out'\n   12 |     output reg vld_out\n      |                ^~~~~~~\n                   /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:90:17: ... Location of blocking assignment (bits [0:0])\n   90 |                 vld_out = 1'b1;\n      |                 ^~~~~~~\n                   /home/ankdesh/explore/RTLLM/_chatgpt4/t1/radix2_div.v:76:21: ... Location of nonblocking assignment (bits [0:0])\n   76 |                     vld_out <= 1;\n      |                     ^~~~~~~\n%Error: Exiting due to 2 error(s)",
+          "sim_output": "",
+          "elapsed_sec": 0.2202
+        }
+      ]
+    },
+    "multi_16bit": {
+      "design_name": "multi_16bit",
+      "category": "Arithmetic",
+      "subcategory": "Multiplier",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "multi_16bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.016 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.007 s (elab=0.001, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.426 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_16bit.v:71:10: Missing newline at end of file (POSIX 3.206).\n                                                                                 : ... Suggest add newline.\n   71 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_16bit.v:47:46: Operator SHIFTL expects 32 bits on the LHS, but LHS's VARREF 'breg' generates 16 bits.\n                                                                                  : ... note: In instance 'multi_16bit'\n   47 |                     yout_r <= yout_r + (breg << (i - 1));\n      |                                              ^~\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_16bit.v:44:28: Operator LT expects 32 or 5 bits on the LHS, but LHS's VARREF 'i' generates 4 bits.\n                                                                                  : ... note: In instance 'multi_16bit'\n   44 |             end else if (i < 17) begin\n      |                            ^\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_16bit.v:51:19: Operator LT expects 32 or 5 bits on the LHS, but LHS's VARREF 'i' generates 4 bits.\n                                                                                  : ... note: In instance 'multi_16bit'\n   51 |             if (i < 17) begin\n      |                   ^\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_16bit.v:56:26: Operator EQ expects 32 or 5 bits on the LHS, but LHS's VARREF 'i' generates 4 bits.\n                                                                                  : ... note: In instance 'multi_16bit'\n   56 |             done_r <= (i == 16);\n      |                          ^~",
+          "sim_output": "",
+          "elapsed_sec": 0.2133
+        }
+      ]
+    },
+    "multi_8bit": {
+      "design_name": "multi_8bit",
+      "category": "Arithmetic",
+      "subcategory": "Multiplier",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "multi_8bit",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: multi_8bit.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "multi_booth_8bit": {
+      "design_name": "multi_booth_8bit",
+      "category": "Arithmetic",
+      "subcategory": "Multiplier",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "multi_booth_8bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.011 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.013 s (elab=0.003, cvt=0.003, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.395 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:45:10: Missing newline at end of file (POSIX 3.206).\n                                                                                      : ... Suggest add newline.\n   45 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHTRUNC: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:26:28: Operator ASSIGNDLY expects 2 bits on the Assign RHS, but Assign RHS's REPLICATE generates 3 bits.\n                                                                                      : ... note: In instance 'multi_booth_8bit'\n   26 |                 booth_code <= {multiplier[1:0], 1'b0};  \n      |                            ^~\n                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=0.000\n                     ... Use \"/* verilator lint_off WIDTHTRUNC */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:29:60: Operator SHIFTL expects 16 bits on the LHS, but LHS's VARREF 'multiplicand' generates 8 bits.\n                                                                                       : ... note: In instance 'multi_booth_8bit'\n   29 |                     3'b001, 3'b010: p <= p + (multiplicand << (2 * ctr));  \n      |                                                            ^~\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:30:60: Operator SHIFTL expects 16 bits on the LHS, but LHS's VARREF 'multiplicand' generates 8 bits.\n                                                                                       : ... note: In instance 'multi_booth_8bit'\n   30 |                     3'b101, 3'b110: p <= p - (multiplicand << (2 * ctr));  \n      |                                                            ^~\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:28:17: Operator CASE expects 3 bits on the Case expression, but Case expression's VARREF 'booth_code' generates 2 bits.\n                                                                                       : ... note: In instance 'multi_booth_8bit'\n   28 |                 case (booth_code)\n      |                 ^~~~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:4:17: Signal is not used: 'a'\n                                                                                       : ... note: In instance 'multi_booth_8bit'\n    4 |     input [7:0] a,\n      |                 ^\n                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=0.000\n                       ... Use \"/* verilator lint_off UNUSEDSIGNAL */\" and lint_on around source to disable this message.\n%Warning-CASEINCOMPLETE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_booth_8bit.v:28:17: Case values incompletely covered (example pattern 0x0)\n   28 |                 case (booth_code)\n      |                 ^~~~\n                         ... For warning description see https://verilator.org/warn/CASEINCOMPLETE?v=0.000\n                         ... Use \"/* verilator lint_off CASEINCOMPLETE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2699
+        }
+      ]
+    },
+    "multi_pipe_4bit": {
+      "design_name": "multi_pipe_4bit",
+      "category": "Arithmetic",
+      "subcategory": "Multiplier",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "multi_pipe_4bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.017 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.007 s (elab=0.001, cvt=0.002, bld=0.000); cpu 0.007 s on 1 threads; allocated 20.438 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_pipe_4bit.v:65:10: Missing newline at end of file (POSIX 3.206).\n                                                                                     : ... Suggest add newline.\n   65 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_pipe_4bit.v:31:62: Operator SHIFTL expects 32 or 8 bits on the LHS, but LHS's VARREF 'mul_a' generates 4 bits.\n                                                                                      : ... note: In instance 'multi_pipe_4bit'\n   31 |                     partial_products[i] <= mul_b[i] ? (mul_a << i) : 0;\n      |                                                              ^~\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1469
+        }
+      ]
+    },
+    "multi_pipe_8bit": {
+      "design_name": "multi_pipe_8bit",
+      "category": "Arithmetic",
+      "subcategory": "Multiplier",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "multi_pipe_8bit",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.038 MB sources in 2 modules, into 0.019 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.008 s (elab=0.001, cvt=0.003, bld=0.000); cpu 0.007 s on 1 threads; allocated 20.516 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_pipe_8bit.v:78:10: Missing newline at end of file (POSIX 3.206).\n                                                                                     : ... Suggest add newline.\n   78 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/multi_pipe_8bit.v:40:58: Operator SHIFTL expects 32 or 16 bits on the LHS, but LHS's VARREF 'mul_a_reg' generates 8 bits.\n                                                                                      : ... note: In instance 'multi_pipe_8bit'\n   40 |                 partials[i] <= mul_b_reg[i] ? (mul_a_reg << i) : 0;\n      |                                                          ^~\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2388
+        }
+      ]
+    },
+    "fixed_point_adder": {
+      "design_name": "fixed_point_adder",
+      "category": "Arithmetic",
+      "subcategory": "Other",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "fixed_point_adder",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: fixed_point_adder.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "fixed_point_substractor": {
+      "design_name": "fixed_point_substractor",
+      "category": "Arithmetic",
+      "subcategory": "Other",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "fixed_point_substractor",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: fixed_point_substractor.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "float_multi": {
+      "design_name": "float_multi",
+      "category": "Arithmetic",
+      "subcategory": "Other",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "float_multi",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: float_multi.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "sub_64bit": {
+      "design_name": "sub_64bit",
+      "category": "Arithmetic",
+      "subcategory": "Substractor",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "sub_64bit",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: sub_64bit.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "JC_counter": {
+      "design_name": "JC_counter",
+      "category": "Control",
+      "subcategory": "Counter",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "JC_counter",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.009 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.011 s (elab=0.000, cvt=0.001, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.219 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/JC_counter.v:23:10: Missing newline at end of file (POSIX 3.206).\n                                                                                : ... Suggest add newline.\n   23 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2435
+        }
+      ]
+    },
+    "counter_12": {
+      "design_name": "counter_12",
+      "category": "Control",
+      "subcategory": "Counter",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "counter_12",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.008 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.006 s (elab=0.000, cvt=0.001, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.219 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/counter_12.v:28:10: Missing newline at end of file (POSIX 3.206).\n                                                                                : ... Suggest add newline.\n   28 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2555
+        }
+      ]
+    },
+    "ring_counter": {
+      "design_name": "ring_counter",
+      "category": "Control",
+      "subcategory": "Counter",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "ring_counter",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: ring_counter.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "up_down_counter": {
+      "design_name": "up_down_counter",
+      "category": "Control",
+      "subcategory": "Counter",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "up_down_counter",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: up_down_counter.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "fsm": {
+      "design_name": "fsm",
+      "category": "Control",
+      "subcategory": "Finite State Machine",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "fsm",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.019 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.010 s (elab=0.000, cvt=0.003, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.430 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/fsm.v:46:10: Missing newline at end of file (POSIX 3.206).\n                                                                         : ... Suggest add newline.\n   46 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2889
+        }
+      ]
+    },
+    "sequence_detector": {
+      "design_name": "sequence_detector",
+      "category": "Control",
+      "subcategory": "Finite State Machine",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "sequence_detector",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: sequence_detector.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "asyn_fifo": {
+      "design_name": "asyn_fifo",
+      "category": "Memory",
+      "subcategory": "FIFO",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "asyn_fifo",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.041 MB sources in 3 modules, into 0.021 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.013 s (elab=0.001, cvt=0.005, bld=0.000); cpu 0.009 s on 1 threads; allocated 20.602 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:175:10: Missing newline at end of file (POSIX 3.206).\n                                                                                : ... Suggest add newline.\n  175 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-DECLFILENAME: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:1:8: Filename 'asyn_fifo' does not match MODULE name: 'dual_port_ram'\n    1 | module dual_port_ram #(\n      |        ^~~~~~~~~~~~~\n                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=0.000\n                       ... Use \"/* verilator lint_off DECLFILENAME */\" and lint_on around source to disable this message.\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:49:34: Procedural assignment to declaration with initial value: 'wptr_bin'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   49 |     reg [PTR_WIDTH:0] wptr_bin = 0, rptr_bin = 0;\n      |                                  ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:95:13: ... Location of variable process write\n                                                                                : ... Perhaps should initialize instead using a reset in this process\n   95 |             wptr_bin <= 0;\n      |             ^~~~~~~~\n                      ... For warning description see https://verilator.org/warn/PROCASSINIT?v=0.000\n                      ... Use \"/* verilator lint_off PROCASSINIT */\" and lint_on around source to disable this message.\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:49:48: Procedural assignment to declaration with initial value: 'rptr_bin'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   49 |     reg [PTR_WIDTH:0] wptr_bin = 0, rptr_bin = 0;\n      |                                                ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:106:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  106 |             rptr_bin <= 0;\n      |             ^~~~~~~~\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:50:35: Procedural assignment to declaration with initial value: 'wptr_gray'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   50 |     reg [PTR_WIDTH:0] wptr_gray = 0, rptr_gray = 0;\n      |                                   ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:96:13: ... Location of variable process write\n                                                                                : ... Perhaps should initialize instead using a reset in this process\n   96 |             wptr_gray <= 0;\n      |             ^~~~~~~~~\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:50:50: Procedural assignment to declaration with initial value: 'rptr_gray'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   50 |     reg [PTR_WIDTH:0] wptr_gray = 0, rptr_gray = 0;\n      |                                                  ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:107:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  107 |             rptr_gray <= 0;\n      |             ^~~~~~~~~\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:55:40: Procedural assignment to declaration with initial value: 'rptr_gray_sync'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   55 |     reg [PTR_WIDTH:0] rptr_gray_sync = 0, wptr_gray_sync = 0;\n      |                                        ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:135:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  135 |             rptr_gray_sync <= 0;\n      |             ^~~~~~~~~~~~~~\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:55:60: Procedural assignment to declaration with initial value: 'wptr_gray_sync'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   55 |     reg [PTR_WIDTH:0] rptr_gray_sync = 0, wptr_gray_sync = 0;\n      |                                                            ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:126:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  126 |             wptr_gray_sync <= 0;\n      |             ^~~~~~~~~~~~~~\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:56:39: Procedural assignment to declaration with initial value: 'rptr_bin_sync'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   56 |     reg [PTR_WIDTH:0] rptr_bin_sync = 0, wptr_bin_sync = 0;\n      |                                       ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:144:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  144 |             rptr_bin_sync <= 0;\n      |             ^~~~~~~~~~~~~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:56:23: Signal is not used: 'rptr_bin_sync'\n                                                                                 : ... note: In instance 'asyn_fifo'\n   56 |     reg [PTR_WIDTH:0] rptr_bin_sync = 0, wptr_bin_sync = 0;\n      |                       ^~~~~~~~~~~~~\n                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=0.000\n                       ... Use \"/* verilator lint_off UNUSEDSIGNAL */\" and lint_on around source to disable this message.\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:56:58: Procedural assignment to declaration with initial value: 'wptr_bin_sync'\n                                                                                : ... note: In instance 'asyn_fifo'\n                                                                                : ... Location of variable initialization\n   56 |     reg [PTR_WIDTH:0] rptr_bin_sync = 0, wptr_bin_sync = 0;\n      |                                                          ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:152:13: ... Location of variable process write\n                                                                                 : ... Perhaps should initialize instead using a reset in this process\n  152 |             wptr_bin_sync <= 0;\n      |             ^~~~~~~~~~~~~\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/asyn_fifo.v:56:42: Signal is not used: 'wptr_bin_sync'\n                                                                                 : ... note: In instance 'asyn_fifo'\n   56 |     reg [PTR_WIDTH:0] rptr_bin_sync = 0, wptr_bin_sync = 0;\n      |                                          ^~~~~~~~~~~~~",
+          "sim_output": "",
+          "elapsed_sec": 0.1829
+        }
+      ]
+    },
+    "LIFObuffer": {
+      "design_name": "LIFObuffer",
+      "category": "Memory",
+      "subcategory": "LIFO",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "LIFObuffer",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: LIFObuffer.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "LFSR": {
+      "design_name": "LFSR",
+      "category": "Memory",
+      "subcategory": "Shifter",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "LFSR",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: LFSR.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "barrel_shifter": {
+      "design_name": "barrel_shifter",
+      "category": "Memory",
+      "subcategory": "Shifter",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "barrel_shifter",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: barrel_shifter.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "right_shifter": {
+      "design_name": "right_shifter",
+      "category": "Memory",
+      "subcategory": "Shifter",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "right_shifter",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.008 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.005 s (elab=0.000, cvt=0.001, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.219 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/right_shifter.v:15:10: Missing newline at end of file (POSIX 3.206).\n                                                                                   : ... Suggest add newline.\n   15 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1728
+        }
+      ]
+    },
+    "freq_div": {
+      "design_name": "freq_div",
+      "category": "Miscellaneous",
+      "subcategory": "Frequency divider",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "freq_div",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.006 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.375 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/freq_div.v:52:10: Missing newline at end of file (POSIX 3.206).\n                                                                              : ... Suggest add newline.\n   52 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/freq_div.v:10:24: Procedural assignment to declaration with initial value: 'cnt_10'\n                                                                               : ... note: In instance 'freq_div'\n                                                                               : ... Location of variable initialization\n   10 |     reg [3:0] cnt_10 = 0;\n      |                        ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/freq_div.v:25:13: ... Location of variable process write\n                                                                               : ... Perhaps should initialize instead using a reset in this process\n   25 |             cnt_10 <= 0;\n      |             ^~~~~~\n                      ... For warning description see https://verilator.org/warn/PROCASSINIT?v=0.000\n                      ... Use \"/* verilator lint_off PROCASSINIT */\" and lint_on around source to disable this message.\n%Warning-PROCASSINIT: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/freq_div.v:11:25: Procedural assignment to declaration with initial value: 'cnt_100'\n                                                                               : ... note: In instance 'freq_div'\n                                                                               : ... Location of variable initialization\n   11 |     reg [6:0] cnt_100 = 0;\n      |                         ^\n                      /home/ankdesh/explore/RTLLM/_chatgpt4/t1/freq_div.v:40:13: ... Location of variable process write\n                                                                               : ... Perhaps should initialize instead using a reset in this process\n   40 |             cnt_100 <= 0;\n      |             ^~~~~~~",
+          "sim_output": "",
+          "elapsed_sec": 0.1729
+        }
+      ]
+    },
+    "freq_divbyeven": {
+      "design_name": "freq_divbyeven",
+      "category": "Miscellaneous",
+      "subcategory": "Frequency divider",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "freq_divbyeven",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: freq_divbyeven.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "freq_divbyfrac": {
+      "design_name": "freq_divbyfrac",
+      "category": "Miscellaneous",
+      "subcategory": "Frequency divider",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "freq_divbyfrac",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: freq_divbyfrac.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "freq_divbyodd": {
+      "design_name": "freq_divbyodd",
+      "category": "Miscellaneous",
+      "subcategory": "Frequency divider",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "freq_divbyodd",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: freq_divbyodd.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "calendar": {
+      "design_name": "calendar",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "calendar",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.009 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.014 s (elab=0.004, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.371 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/calendar.v:53:10: Missing newline at end of file (POSIX 3.206).\n                                                                              : ... Suggest add newline.\n   53 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1732
+        }
+      ]
+    },
+    "edge_detect": {
+      "design_name": "edge_detect",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "edge_detect",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.009 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.012 s (elab=0.000, cvt=0.004, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.219 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/edge_detect.v:39:10: Missing newline at end of file (POSIX 3.206).\n                                                                                 : ... Suggest add newline.\n   39 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2935
+        }
+      ]
+    },
+    "parallel2serial": {
+      "design_name": "parallel2serial",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "parallel2serial",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.008 s (elab=0.000, cvt=0.003, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.359 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/parallel2serial.v:37:10: Missing newline at end of file (POSIX 3.206).\n                                                                                     : ... Suggest add newline.\n   37 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2511
+        }
+      ]
+    },
+    "pulse_detect": {
+      "design_name": "pulse_detect",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "pulse_detect",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.017 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.009 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.414 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/pulse_detect.v:64:10: Missing newline at end of file (POSIX 3.206).\n                                                                                  : ... Suggest add newline.\n   64 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2793
+        }
+      ]
+    },
+    "serial2parallel": {
+      "design_name": "serial2parallel",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "serial2parallel",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.005 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.230 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/serial2parallel.v:37:10: Missing newline at end of file (POSIX 3.206).\n                                                                                     : ... Suggest add newline.\n   37 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1744
+        }
+      ]
+    },
+    "synchronizer": {
+      "design_name": "synchronizer",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "synchronizer",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.011 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.012 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.367 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/synchronizer.v:52:10: Missing newline at end of file (POSIX 3.206).\n                                                                                  : ... Suggest add newline.\n   52 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.278
+        }
+      ]
+    },
+    "traffic_light": {
+      "design_name": "traffic_light",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "traffic_light",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.038 MB sources in 2 modules, into 0.017 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.007 s (elab=0.000, cvt=0.003, bld=0.000); cpu 0.007 s on 1 threads; allocated 20.438 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/traffic_light.v:87:10: Missing newline at end of file (POSIX 3.206).\n                                                                                   : ... Suggest add newline.\n   87 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-CASEINCOMPLETE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/traffic_light.v:64:13: Case values incompletely covered (example pattern 0x3)\n   64 |             case (state)\n      |             ^~~~\n                         ... For warning description see https://verilator.org/warn/CASEINCOMPLETE?v=0.000\n                         ... Use \"/* verilator lint_off CASEINCOMPLETE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2994
+        }
+      ]
+    },
+    "width_8to16": {
+      "design_name": "width_8to16",
+      "category": "Miscellaneous",
+      "subcategory": "Others",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "width_8to16",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.009 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.005 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.355 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/width_8to16.v:44:10: Missing newline at end of file (POSIX 3.206).\n                                                                                 : ... Suggest add newline.\n   44 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1717
+        }
+      ]
+    },
+    "RAM": {
+      "design_name": "RAM",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "RAM",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.006 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.383 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/RAM.v:43:10: Missing newline at end of file (POSIX 3.206).\n                                                                         : ... Suggest add newline.\n   43 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-VARHIDDEN: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/RAM.v:16:21: Declaration of signal hides declaration in upper scope: 'RAM'\n   16 |     reg [WIDTH-1:0] RAM [(1<<DEPTH)-1:0];\n      |                     ^~~\n                    /home/ankdesh/explore/RTLLM/_chatgpt4/t1/RAM.v:1:8: ... Location of original declaration\n    1 | module RAM #(\n      |        ^~~\n                    ... For warning description see https://verilator.org/warn/VARHIDDEN?v=0.000\n                    ... Use \"/* verilator lint_off VARHIDDEN */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.2029
+        }
+      ]
+    },
+    "ROM": {
+      "design_name": "ROM",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "ROM",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: ROM.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "alu": {
+      "design_name": "alu",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "alu",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.038 MB sources in 2 modules, into 0.018 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.008 s (elab=0.001, cvt=0.003, bld=0.000); cpu 0.007 s on 1 threads; allocated 20.445 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/alu.v:91:10: Missing newline at end of file (POSIX 3.206).\n                                                                         : ... Suggest add newline.\n   91 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/alu.v:72:19: Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'flag' generates 1 bits.\n                                                                          : ... note: In instance 'alu'\n   72 |                 r = flag;\n      |                   ^\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=0.000\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/alu.v:78:19: Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'flag' generates 1 bits.\n                                                                          : ... note: In instance 'alu'\n   78 |                 r = flag;\n      |                   ^",
+          "sim_output": "",
+          "elapsed_sec": 0.157
+        }
+      ]
+    },
+    "clkgenerator": {
+      "design_name": "clkgenerator",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "clkgenerator",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: clkgenerator.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "instr_reg": {
+      "design_name": "instr_reg",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "instr_reg",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: instr_reg.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    },
+    "pe": {
+      "design_name": "pe",
+      "category": "Miscellaneous",
+      "subcategory": "RISC-V",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "pe",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.036 MB sources in 2 modules, into 0.008 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.005 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.215 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/pe.v:23:10: Missing newline at end of file (POSIX 3.206).\n                                                                        : ... Suggest add newline.\n   23 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.\n%Warning-UNUSEDSIGNAL: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/pe.v:10:16: Bits of signal are not used: 'product'[63:32]\n                                                                          : ... note: In instance 'pe'\n   10 |     reg [63:0] product;\n      |                ^~~~~~~\n                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=0.000\n                       ... Use \"/* verilator lint_off UNUSEDSIGNAL */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1419
+        }
+      ]
+    },
+    "signal_generator": {
+      "design_name": "signal_generator",
+      "category": "Miscellaneous",
+      "subcategory": "Signal generation",
+      "total_trials": 1,
+      "syntax_successes": 1,
+      "func_successes": 0,
+      "syntax_rate": 1.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "signal_generator",
+          "trial_name": "lint",
+          "syntax_ok": true,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": 0,
+          "compile_output": "- V e r i l a t i o n   R e p o r t:  rev vUNKNOWN-built20260516-4e853d8\n- Verilator: Built from 0.037 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB\n- Verilator: Walltime 0.005 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.005 s on 1 threads; allocated 20.355 MB\n\n%Warning-EOFNEWLINE: /home/ankdesh/explore/RTLLM/_chatgpt4/t1/signal_generator.v:51:10: Missing newline at end of file (POSIX 3.206).\n                                                                                      : ... Suggest add newline.\n   51 | endmodule\n      |          ^\n                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=0.000\n                     ... Use \"/* verilator lint_off EOFNEWLINE */\" and lint_on around source to disable this message.",
+          "sim_output": "",
+          "elapsed_sec": 0.1482
+        }
+      ]
+    },
+    "square_wave": {
+      "design_name": "square_wave",
+      "category": "Miscellaneous",
+      "subcategory": "Signal generation",
+      "total_trials": 1,
+      "syntax_successes": 0,
+      "func_successes": 0,
+      "syntax_rate": 0.0,
+      "func_rate": 0.0,
+      "trials": [
+        {
+          "design_name": "square_wave",
+          "trial_name": "t1",
+          "syntax_ok": false,
+          "func_ok": false,
+          "timed_out": false,
+          "return_code": -1,
+          "compile_output": "Target file not found: square_wave.v",
+          "sim_output": "",
+          "elapsed_sec": 0.0
+        }
+      ]
+    }
+  }
+}

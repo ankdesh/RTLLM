@@ -16,27 +16,95 @@
 We have released RTLLM v2.1 already. We sincerely thank users for pointing out issues encountered when using RTLLM, and apologize for the confusion caused.
 1. Corrected several design descriptions and testbenches.
 2. Updated the affected designs for consistency.
+3. Added modernized, open-source agent evaluation suite (`agent_eval/`) supporting Icarus Verilog, Verilator, pass@k metrics, and JSON/JSONL dataset extraction.
+4. Added comprehensive agentic utilization guide: [`RTLLM_AGENTIC_GUIDE.md`](./RTLLM_AGENTIC_GUIDE.md) and project constitution [`GEMINI.md`](./GEMINI.md).
 
 --15 Aug. 2026
 ***
-***Version 2.0***
 
-We have released RTLLM v2.0 already, which builds upon **[v1.1](https://github.com/hkust-zhiyao/RTLLM/tree/v1.1)** by expanding the number of designs to **50**. 
+## Modern Agentic Evaluation Suite (Open-Source)
 
-Additionally, these designs have been meticulously categorized.
-1. Added a design categorization file: ```File_list.md```.
-3. Fix some bugs.
+RTLLM v2.1 includes a high-throughput, license-free evaluation engine replacing legacy proprietary Synopsys VCS workflows:
 
---11 Oct. 2024
-***
-***Version 1.1***
+- **Icarus Verilog (`iverilog` + `vvp`)**: Event-driven behavioral simulator for full functional testbenches.
+- **Verilator 5 (`verilator-cli`)**: Sub-10ms static linting (`--lint-only`) and compiled timing simulation.
+- **Multithreading**: Evaluate all 50 designs across 5 trials in under 2 seconds.
+- **Standardized Datasets**: Export all 50 circuit specifications to structured JSON and JSONL.
 
-We have released RTLLM v1.1 already, which fixes some errors found in **[v1.0](https://github.com/hkust-zhiyao/RTLLM/tree/v1.0)**.
-1. Update the ```design_description.txt ``` to better guide LLM in generating RTL code.
-2. Provide a more comprehensive ```testbench.v``` to improve the accuracy of the test.
-3. Update a more practical testing script ```auto_run.py``` .
+### Quickstart
 
---13 Dec. 2023
+```bash
+# 1. Environment setup with uv
+uv venv .venv
+source .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# 2. Export benchmark dataset for LLM pipelines
+uv run python agent_eval/export_dataset.py
+
+# 3. Evaluate generated designs with pass@k calculation
+uv run python agent_eval/run_eval.py --model-dir _chatgpt4 --simulator iverilog --threads 8
+
+# 4. Fast static linting with Verilator
+uv run python agent_eval/run_eval.py --model-dir _chatgpt4/t1 --simulator verilator --lint-only
+```
+
+---
+
+## Autonomous Reflection Agent Framework (`reflection_agent_fw`)
+
+RTLLM includes a completely decoupled, standalone agent framework (`reflection_agent_fw/`) that solves individual RTL problems using a bounded **Stage-Gated Reflection Loop**:
+- **Level 0 (Zero-Shot)**: Initial RTL generation directly from design specification.
+- **Level 1 (Lint Reflection)**: Feedback loop repairing compilation/syntax errors using `verilator-cli --lint-only`.
+- **Level 2 (Simulation Reflection)**: White-box testbench reflection feeding simulation error logs + full `testbench.v` code.
+- **Level 3–5 (Iterative Multi-Turn Repair)**: Multi-turn self-debugging with bounded tries.
+- **Early Stopping**: Bails out immediately upon functional verification pass.
+
+### Standalone Single-Problem CLI
+Solve any individual RTL problem independently:
+```bash
+uv run python -m reflection_agent_fw.cli \
+  --name adder_8bit \
+  --module adder_8bit \
+  --prompt-file Arithmetic/Adder/adder_8bit/design_description.txt \
+  --tb Arithmetic/Adder/adder_8bit/testbench.v \
+  --model gpt-4o-mini \
+  --max-rounds 3 \
+  --output-v my_adder.v \
+  --output-json trajectory.json
+```
+
+---
+
+## Multi-Framework Benchmarking & Model Comparison
+
+Benchmark agent frameworks (e.g. `reflection_agent_fw`, `zero_shot`, or custom adapters) across RTLLM's 50 benchmark designs and 4 circuit complexity tiers:
+
+```bash
+# 1. Run reflection agent benchmark on RTLLM designs (resumable with atomic checkpoints)
+uv run python agent_eval/run_framework_eval.py \
+  --framework reflection_agent_fw \
+  --model gpt-4o-mini \
+  --workers 4 \
+  --max-rounds 5 \
+  --output-dir runs/
+
+# 2. Run zero-shot baseline for comparison
+uv run python agent_eval/run_framework_eval.py \
+  --framework zero_shot \
+  --model gpt-4o-mini \
+  --workers 4 \
+  --output-dir runs/
+
+# 3. Compare frameworks and models side-by-side
+uv run python agent_eval/compare_frameworks.py \
+  runs/reflection_agent_fw_gpt-4o-mini_* \
+  runs/zero_shot_gpt-4o-mini_* \
+  --output comparison_report.md
+```
+
+For detailed agent orchestration patterns, compiler-in-the-loop tooling, reflection loops, and circuit complexity tiers, see [**RTLLM Agentic Guide**](./RTLLM_AGENTIC_GUIDE.md).
+
 ***
 # RTLLM: An Open-Source Benchmark for Design RTL Generation with Large Language Model
 
