@@ -20,6 +20,7 @@ class SolveStep:
     prompt_tokens: int = 0
     completion_tokens: int = 0
     elapsed_sec: float = 0.0
+    stages: List[Dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert solve step to serializable dictionary."""
@@ -36,6 +37,7 @@ class SolveStep:
             "prompt_tokens": self.prompt_tokens,
             "completion_tokens": self.completion_tokens,
             "elapsed_sec": round(self.elapsed_sec, 4),
+            "stages": self.stages,
         }
 
 

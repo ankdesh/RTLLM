@@ -12,6 +12,7 @@ from reflection_agent_fw.tools import RTLToolEnvironment
 def test_solver_early_exit_on_l0_success() -> None:
     # Mock LLM that returns working code immediately
     mock_llm = MagicMock(spec=OpenAICompatibleClient)
+    mock_llm.model = "mock-model"
     mock_llm.complete.return_value = (
         "```verilog\n"
         "module simple_gate(input a, input b, output y);\n"
@@ -55,6 +56,7 @@ def test_solver_early_exit_on_l0_success() -> None:
 def test_solver_strictly_bounds_reflection_rounds() -> None:
     # Mock LLM that always returns syntax error code
     mock_llm = MagicMock(spec=OpenAICompatibleClient)
+    mock_llm.model = "mock-model"
     mock_llm.complete.return_value = (
         "```verilog\n"
         "module broken_mod(input a, output b);\n"

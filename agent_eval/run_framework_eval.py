@@ -20,6 +20,7 @@ from agent_eval.benchmark_reporter import BenchmarkReporter
 from agent_eval.checkpoint_store import BenchmarkCheckpointStore
 from agent_eval.dataset_exporter import DatasetExporter
 from agent_eval.framework_adapter import BaseAgentAdapter
+from agent_eval.pipeline_visualizer import PipelineVisualizer
 from reflection_agent_fw.llm_client import OpenAICompatibleClient
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -205,6 +206,12 @@ def main() -> int:
         json_path=json_path,
         csv_path=csv_path,
     )
+
+    # 7. Generate Interactive Pipeline Execution Visualization HTML
+    html_path = run_dir / "pipeline_visualization.html"
+    run_vis_data = PipelineVisualizer.load_from_run_dir(run_dir)
+    PipelineVisualizer.generate_html_report(run_vis_data, html_path)
+    logger.info("Generated interactive pipeline visualizer at: %s", html_path)
 
     logger.info("Saved benchmark reports to directory: %s", run_dir)
     return 0
